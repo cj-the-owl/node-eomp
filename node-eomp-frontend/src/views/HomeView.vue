@@ -9,9 +9,9 @@
   <div class="p-2 m-2">
     <h3 class="text-center">Some of of our products!</h3>
     <div id="feat-prod">
-      <img class="p-2" src="https://i.postimg.cc/ZKP0TNZ0/7-RECETAS-PARA-CENAS-LIGERAS-BARATAS-Y-F-CILES-DE-PREPARAR-EN-UN-MOMENTO.jpg">
-      <img class="p-2" src="https://i.postimg.cc/5tDf591Z/How-To-Make-Onigiri-4-Easy-Recipes-Pickled-Plum.jpg">
-      <img class="p-2" src="https://i.postimg.cc/tT7VJ4kw/download-2.jpg">
+      <img class="p-2" id="prod-img" src="https://i.postimg.cc/ZKP0TNZ0/7-RECETAS-PARA-CENAS-LIGERAS-BARATAS-Y-F-CILES-DE-PREPARAR-EN-UN-MOMENTO.jpg">
+      <img class="p-2" id="prod-img" src="https://i.postimg.cc/5tDf591Z/How-To-Make-Onigiri-4-Easy-Recipes-Pickled-Plum.jpg">
+      <img class="p-2" id="prod-img" src="https://i.postimg.cc/tT7VJ4kw/download-2.jpg">
     </div>
   </div>
 </template>
@@ -32,14 +32,16 @@
     
   }
 
-  .p-2 {
+  #prod-img {
     height: 450px;
+    width: 400px;
+    border-radius: 5%;
   }
 
   #feat-prod {
     display: grid;
     grid-template-columns: auto auto auto;
     justify-content: center;
-    gap: 20px;
+    gap: 30px;
   }
 </style>

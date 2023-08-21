@@ -1,20 +1,20 @@
 <template>
 <nav class="navbar navbar-expand-lg navbar-light bg-light">
   <div class="container-fluid">
-    <a class="navbar-brand" href="#">Logo</a>
+    <router-link class="navbar-brand" to="/"><img src="#"></router-link>
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
     <div class="collapse navbar-collapse" id="navbarNav">
       <ul class="navbar-nav">
         <li class="nav-item">
-          <router-link class="nav-link" to="">About</router-link>
+          <router-link class="nav-link" to="/about">About</router-link>
         </li>
         <li class="nav-item">
-          <router-link class="nav-link" to="">Products/Menu</router-link>
+          <router-link class="nav-link" to="/products">Products/Menu</router-link>
         </li>
         <li class="nav-item">
-          <router-link class="nav-link" to="">Contact</router-link>
+          <router-link class="nav-link" to="/contact">Contact</router-link>
         </li>
         <li class="nav-item">
           <router-link class="nav-link" to="">Admin</router-link>
