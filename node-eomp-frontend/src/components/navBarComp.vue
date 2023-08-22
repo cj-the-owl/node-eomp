@@ -1,5 +1,5 @@
 <template>
-<nav class="navbar navbar-expand-lg navbar-light">
+<nav class="navbar fixed-top navbar-expand-lg navbar-light">
   <div class="container-fluid">
     <router-link class="navbar-brand" to="/"><img src="#"></router-link>
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
@@ -34,10 +34,19 @@
 
 <style scoped>
     .navbar {
-        background-color: black;
+        background-color: #fbc0bd;
+        height: 80px;
     }
 
     .nav-link {
-        color: white !important;
+        color: black !important;
+        font-size: 25px;
     }
+
+    .navbar-nav {
+        padding-left: 34rem;
+    }
+
+    
+    
 </style>

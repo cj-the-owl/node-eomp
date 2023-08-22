@@ -2,7 +2,7 @@
   <div class="position-relative overflow-hidden text-center text-black" id="hero">
     <div class="col-md-5 p-lg-5 mx-auto my-5">
       <h1 class="display-3">this is the name of the store</h1>
-      <button class="btn btn-outline-secondary fw-medium" id="shop-btn">View Products/Menu</button>
+      <router-link to="/products"><button class="btn fw-medium" id="shop-btn">View Products/Menu</button></router-link>
     </div>
   </div>
 
@@ -24,10 +24,11 @@
 
 <style scoped>
   #hero {
-    background-image: url(https://i.postimg.cc/MpCNhptz/Free-Vector-Hand-drawn-japanese-food-background-removebg-preview.png);
+    background-color: #C4FF86;
+    /* background-image: url(https://i.postimg.cc/MpCNhptz/Free-Vector-Hand-drawn-japanese-food-background-removebg-preview.png); */
     background-repeat: no-repeat;
     background-size:contain;
-    height: 100vh;
+    /* height: 100vh; */
     overflow: hidden;
     
   }
@@ -43,5 +44,10 @@
     grid-template-columns: auto auto auto;
     justify-content: center;
     gap: 30px;
+  }
+
+  .btn {
+    background-color: black;
+    color: white
   }
 </style>

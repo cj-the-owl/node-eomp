@@ -16,5 +16,6 @@ import FooterComp from './components/footerComp.vue';
 <style>
   body {
     background-color: #fbc0bd !important;
+    font-family: 'Nerko One', cursive;
   }
 </style>
