@@ -1,11 +1,11 @@
 <template>
     <footer>
         <div>
-            <p>Copyright ©️ cj-the-owl & Tim</p>
+            <p class="p-2">Copyright ©️ cj-the-owl & Tim</p>
 
-            <img class="px-2" src="https://i.postimg.cc/ZRCpyg6b/icons8-instagram-50-1.png">
-            <img class="px-2" src="https://i.postimg.cc/6QQGDSjr/icons8-github-50-1.png">
-            <img class="px-2" src="https://i.postimg.cc/Qd8BTwr2/icons8-linkedin-50-1.png">
+            <img class="px-2" src="https://i.postimg.cc/9Fh3kdxb/icons8-instagram-50-2.png">
+            <img class="px-2" src="https://i.postimg.cc/63FKqFfx/icons8-github-50-2.png">
+            <img class="px-2" src="https://i.postimg.cc/256NwCHf/icons8-linkedin-50-2.png">
         </div>
        
     </footer>

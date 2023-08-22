@@ -1,7 +1,7 @@
 <template>
   <div class="position-relative overflow-hidden text-center text-black" id="hero">
     <div class="col-md-5 p-lg-5 mx-auto my-5">
-      <h1 class="display-3">The Mystic Wok</h1>
+      <h1 class="display-3 mt-5">The Mystic Wok</h1>
       <router-link to="/products"><button class="btn fw-medium" id="shop-btn">View Products/Menu</button></router-link>
     </div>
   </div>
@@ -33,10 +33,11 @@
 
 <style scoped>
   #hero {
-    background-color: #C4FF86;
-    /* background-image: url(https://i.postimg.cc/MpCNhptz/Free-Vector-Hand-drawn-japanese-food-background-removebg-preview.png); */
+    background-image: url(https://i.postimg.cc/tgG3jgxh/sushirestaurant-sushi-aesthetic-restaurant-cutesushiplace-sushilovers.jpg);
     background-repeat: no-repeat;
-    background-size:contain;
+    background-size:cover;
+    background-position: center;
+    height: 30rem;
     /* height: 100vh; */
     overflow: hidden;
     

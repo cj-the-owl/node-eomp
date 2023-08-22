@@ -1,7 +1,7 @@
 <template>
 <nav class="navbar fixed-top navbar-expand-lg navbar-light">
   <div class="container-fluid">
-    <router-link class="navbar-brand" to="/"><img src="#"></router-link>
+    <router-link class="navbar-brand" to="/"><img src="https://i.postimg.cc/TPkHYmqz/Lovlyze-removebg-preview.png" width="65" height="115"></router-link>
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
