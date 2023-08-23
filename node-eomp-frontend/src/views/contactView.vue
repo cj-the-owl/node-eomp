@@ -9,27 +9,28 @@
 
 <div class="col-md-6">
   <div class="h-100 p-5 m-4 rounded-3 text-center">
-    <h4 class="fs-3">The Mystic Wok</h4>
-    <img src="https://i.postimg.cc/TPkHYmqz/Lovlyze-removebg-preview.png" width="90px" height="150px">
+    <img id="logo-img" src="https://i.postimg.cc/4xMB1Fpd/Screenshot-2023-08-23-122400-removebg-preview.png">
     <p class="fs-5">314 Imam Haron Road Lansdowne Cape Town</p><br>
-    <p class="fs-5">021 705 4269</p>
+    <!-- <p class="fs-5">021 705 4269</p> -->
   </div>
 </div>
 
 <div class="col-md-6">
   <div class="h-100 p-5 m-4 text-dark rounded-3">
-    <div class="col-6 fs-5">
-        <input type="text" class="form-input" id="fullName" placeholder="Name & Surname Here" required>
+    <form action="https://formspree.io/f/xrgwqlqa" method="POST">
+  <div class="col-6 fs-5">
+        <input type="text" class="form-input" id="fullName" name="fullName" placeholder="Name & Surname Here" required>
     </div>
     <div class="col-12 fs-5">
-        <input type="text" class="form-input" id="Email" placeholder="Email" required>
+        <input type="text" class="form-input" id="Email" name="Email" placeholder="Email" required>
     </div>
     <div class="col-12 fs-5">
-        <input type="text" class="form-input" id="Message" placeholder="Your message here..." required>
+        <textarea type="text" class="form-input" id="Message" name="Message" placeholder="Your message here..." required></textarea>
     </div>
     <div class="col-12">
         <button type="submit" class="btn" id="submit-btn">Submit!</button>
     </div>
+</form>  
   </div>
 </div>
 
@@ -73,6 +74,11 @@
 
   .col-md-6 {
     width: 100%;
+  }
+
+  #logo-img {
+    width: 270px;
+    height: 250px;
   }
 
 
