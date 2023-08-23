@@ -17,8 +17,7 @@
 
       <div class="col-md-6">
         <div class="h-100 p-5 m-4 rounded-3">
-          <img src="#">
-          <p>this will be for an image</p>
+          <img id="img-1" src="https://i.postimg.cc/6pmqfk3S/sushirestaurant-sushi-aesthetic-restaurant-cutesushiplace-sushilovers-1.jpg">
         </div>
       </div>
     </div>
@@ -26,8 +25,7 @@
 
       <div class="col-md-6">
         <div class="h-100 p-5 m-4 rounded-3">
-          <img src="#">
-          <p>this will be for an image</p>
+          <img id="img-2" src="https://i.postimg.cc/wM7bLRbn/Musashi-Japanese-Cuisine-North-Shore-City-New-Zealand.jpg">
         </div>
       </div>
 
@@ -38,6 +36,22 @@
         </div>
       </div>
 
+    </div>
+
+    <div class="row-align-items-md-stretch">
+      
+      <div class="col-md-6">
+        <div class="h-100 p-5 m-4 text-dark rounded-3">
+          <h3>The Mystic Wok Experience</h3>
+          <p>Dining at [Restaurant Name] is not just about food—it's an experience. The moment you step through our doors, you're transported to a world of aromatic spices, mesmerizing flavors, and the timeless traditions of Asia. Our interiors, inspired by traditional Asian architecture, combined with soulful background melodies, create a serene and intimate atmosphere, perfect for families, couples, and corporate gatherings..</p>
+        </div>
+      </div>
+
+      <div class="col-md-6">
+        <div class="h-100 p-5 m-4 rounded-3">
+          <img id="img-3" src="https://i.postimg.cc/t4ywmJ1n/download-3.jpg">
+        </div>
+      </div>
     </div>
 
 
@@ -76,5 +90,10 @@
     display: flex;
     align-items: center;
     justify-content: center;
+  }
+
+  #img-1, #img-2, #img-3 {
+    height: 320px;
+    width: 350px;
   }
 </style>
