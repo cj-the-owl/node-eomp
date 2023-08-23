@@ -64,4 +64,10 @@
   #feat-prod-head {
     color: black;
   }
+
+  /* responsiveness */
+
+  @media screen and (max-width: 1000px) {
+    
+  }
 </style>
