@@ -4,21 +4,23 @@
             <h1 class="display-3">Our Products</h1>
         </div>
     </div>
-
-    <div v-if="products" class="flex-container" id="products">
-        <div class="prod-dis" v-for="product of products" :key="product.prodID" :product="product">
-            <img :src="prodUrl">
-            <h5>{{ product.prodName }}</h5>
-            <p>{{ product.amount }}</p>
+    <router-link :to="{name: 'product', params:{id: product.product_id}}">
+        <div v-if="products" class="flex-container" id="products">
+        <div class="prod-dis" v-for="product of products" :key="product.product_id" :product="product">
+            <img :src="product.product_image">
+            <h5>{{ product.product_name }}</h5>
+            <p>{{ product.product_price }}</p>
         </div>
     </div>
     <div v-else>
         <p>Spinner goes here</p>
     </div>
+    </router-link>
 </template>
 
 <script>
     export default {
+        props: ["product"],
         computed: {
             products() {
                 return this.$store.state.products

@@ -37,15 +37,15 @@
     background-repeat: no-repeat;
     background-size:cover;
     background-position: center;
-    height: 30rem;
+    height: 25rem;
     /* height: 100vh; */
     overflow: hidden;
     
   }
 
   #prod-img {
-    height: 450px;
-    width: 400px;
+    height: 350px;
+    width: 300px;
     border-radius: 5%;
   }
 
@@ -68,6 +68,6 @@
   /* responsiveness */
 
   @media screen and (max-width: 1000px) {
-    
+
   }
 </style>

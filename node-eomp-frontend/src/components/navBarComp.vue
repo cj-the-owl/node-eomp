@@ -43,9 +43,9 @@
         font-size: 25px;
     }
 
-    .navbar-nav {
+    /* .navbar-nav {
         padding-left: 34rem;
-    }
+    } */
 
     @media screen and (max-width: 1300px) {
       .navbar-nav {
