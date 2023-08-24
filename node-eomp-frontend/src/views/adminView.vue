@@ -1,5 +1,5 @@
 <template>
-    <div class="position-relative overflow-hidden text-center text-black" id="hero">
+    <div class="position-relative overflow-hidden text-center" id="hero">
         <div class="col-md-5 p-lg-5 mx-auto my-5">
             <h1 class="display-3">Admin</h1>
         </div>
@@ -29,6 +29,14 @@
         </tr>
 
         <tbody class="prod-disp" v-for="product of products" :key="product.prodID" :product="product">
+            <tr>
+                <td>{{ product.product_id }}</td>
+                <td>{{ product.product_name }}</td>
+                <td>{{ product.product_quantity }}</td>
+                <td>{{ product.product_price }}</td>
+                <td>{{ product.product_category }}</td>
+                <td>{{ product.product_id }}</td>
+            </tr>
         </tbody>
     </table>
 
@@ -43,13 +51,14 @@
             }
         },
         mounted() {
-            this.$store.dispatch("getProducts")
+            this.$store.dispatch("fetchProducts")
         }
     }
 </script>
 
 <style scoped>
     #hero {
-    background-color: #C4FF86;
+    background-color: black;
+    color: white;
   }
 </style>

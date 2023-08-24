@@ -26,4 +26,8 @@
         justify-content: center;
         align-items: center;
     }
+
+    .px-2 {
+        filter: invert(1);
+    }
 </style>
