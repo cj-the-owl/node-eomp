@@ -1,4 +1,4 @@
-const db = require("../config")
+const db = require("../config/db.config")
 const {hash, compare, hashSync} = require("bcrypt")
 const {createToken} = require("../middleware/authenticatedUser")
 
@@ -7,7 +7,7 @@ class User {
         const {emailAdd, userPass} = req.body 
         const strQry = 
         `
-        Select firstName, lastName, userAge, Gender, userRole, userPass, userProfile,  
+        Select firstName, lastName, userAge, Gender, userRole, emailAdd, userPass, userProfile,  
         From Users
         where emailAdd = '${emailAdd}';
         `
@@ -45,7 +45,7 @@ class User {
     fetchUsers(req, res) {
         const strQry = 
         `
-        Select userID, firstName, lastName, userAge, Gender, userRole, userPass, userProfile,  
+        Select userID, firstName, lastName, userAge, Gender, userRole, emailAdd, userPass, userProfile,  
         From Users
         `
         db.query(strQry, (err, data) => {
@@ -62,7 +62,7 @@ class User {
     fetchUser(req, res) {
         const strQry = 
         `
-        Select userID, firstName, lastName, userAge, Gender, userRole, userPass, userProfile,  
+        Select userID, firstName, lastName, userAge, Gender, userRole, emailAdd, userPass, userProfile,  
         From Users
         Where usersID = ?;
         `

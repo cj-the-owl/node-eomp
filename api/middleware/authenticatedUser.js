@@ -1,4 +1,4 @@
-requestAnimationFrame("dotenv").config()
+require("dotenv").config()
 const { sign, verify} = require('jsonwebtoken')
 
 function createToken(user) {
