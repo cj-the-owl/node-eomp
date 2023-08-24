@@ -5,7 +5,10 @@
         </div>
     </div>
 
-    <table v-if="products" class="table-responsive-md table table-bordered">
+    <div>
+        <h1>Products</h1>
+        <addProduct/>
+        <table class="table-responsive-md table table-bordered">
         <thead>
             <tr>
                 <th scope="col">Product Id</th>
@@ -18,37 +21,39 @@
             </tr>
         </thead>
 
-        <tr>
-            <td><input type="text" class="admin-input" id="Id"></td>
-            <td><input type="text" class="admin-input" id="Name"></td>
-            <td><input type="text" class="admin-input" id="Quantity"></td>
-            <td><input type="text" class="admin-input" id="Price"></td>
-            <td><input type="text" class="admin-input" id="Category"></td>
-            <td><input type="text" class="admin-input" id="ProdUrl"></td>
-            <td><button class=btn>Add Product</button></td>
-        </tr>
-
         <tbody class="prod-disp" v-for="product of products" :key="product.prodID" :product="product">
-            <tr>
-                <td>{{ product.product_id }}</td>
-                <td>{{ product.product_name }}</td>
-                <td>{{ product.product_quantity }}</td>
-                <td>{{ product.product_price }}</td>
-                <td>{{ product.product_category }}</td>
-                <td>{{ product.product_id }}</td>
+            <tr v-if="products">
+                <td>{{ product.prodID }}</td>
+                <td>{{ product.prodName }}</td>
+                <td>{{ product.quantity }}</td>
+                <td>{{ product.amount }}</td>
+                <td>{{ product.category }}</td>
+                <td><img :src=product.prodUrl></td>
+                <td><updateProduct :product="product"/>
+                    <button class="btn" @click="deleteProduct(product.prodID)">Delete</button>
+                </td>
             </tr>
+            <tr v-else>Waiting</tr>
         </tbody>
     </table>
-
-    <div v-else>Spinner goes here</div>
+    </div>
 </template>
 
 <script>
+import UpdateProduct from '@/components/updateProduct.vue'
+import addProduct from '@/components/addProduct.vue'
     export default {
+        components: {
+            addProduct,
+            UpdateProduct,
+        },
         computed: {
             products() {
-                return this.$store.state.products
-            }
+                return this.$store.state.products;
+            },
+            product() {
+                return this.$store.state.product;
+            },
         },
         mounted() {
             this.$store.dispatch("fetchProducts")

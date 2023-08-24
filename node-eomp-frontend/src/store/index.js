@@ -1,24 +1,40 @@
 import { createStore } from 'vuex'
-
+const baseUrl = "node-eomp-vbin.onrender.com";
 export default createStore({
   state: {
     products: null,
-    users: null
+    product: null,
+    users: null,
+    user: null,
+    asc: true
   },
   getters: {
   },
   mutations: {
-    setProducts: (state, products) => {
-      state.products = products
+    setProducts: (state, value) => {
+      state.products = value
     },
-    ssetProduct: (state, product) => {
-      state.product = product;
+    ssetProduct: (state, value) => {
+      state.product = value;
+    },
+    sortProductsByPrice: (state) => {
+      state.products.sort((a, b) => {
+        return a.price - b.price
+      });
+      if (!state.asc) {
+        state.products.reverse();
+      }
+      state.asc = !state.asc;
+    },
+
+    setUsers: (state, value) => {
+      state.users= value
     }
   },
   actions: {
     async fetchProducts(context) {
       try{
-        let products = await (await fetch("https://sixth-zp4e.onrender.com/products")).json()
+        let products = await (await fetch(baseUrl+"products")).json()
         if (products) {
           context.commit ("setProducts", products)
         } else {
@@ -29,9 +45,9 @@ export default createStore({
         console.error(error)
       }
     },
-    async fetchProduct(context) {
+    async fetchProduct(context, id) {
       try{
-        let product = await (await fetch("https://sixth-zp4e.onrender.com/products/:id")).json()
+        let product = await (await fetch(baseUrl+"/products/id")).json()
         if (product) {
           context.commit ("setProduct", product)
         } else {
@@ -39,7 +55,7 @@ export default createStore({
         }
       }
       catch(e) {
-        console.error(error)
+        console.error(e)
       }
     },
     async fetchUsers(context) {
