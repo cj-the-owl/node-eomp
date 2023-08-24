@@ -6,8 +6,6 @@ const {User, Products} = require("../model/users")
 const user = new User()
 const product = new Products()
 
-
-
 route.post("/login", bodyParser.json(), (req, res) => {
     user.login(req, res)
 })

@@ -44,8 +44,7 @@ class User {
     }
     fetchUsers(req, res) {
         const strQry = 
-        `
-        Select userID, firstName, lastName, userAge, Gender, userRole, emailAdd, userPass, userProfile,  
+        `Select userID, firstName, lastName, userAge, Gender, userRole, emailAdd, userPass, userProfile,  
         From Users
         `
         db.query(strQry, (err, data) => {
@@ -64,12 +63,18 @@ class User {
         `
         Select userID, firstName, lastName, userAge, Gender, userRole, emailAdd, userPass, userProfile,  
         From Users
-        Where usersID = ?;
+        Where userID = ?;
         `
         db.query(strQry, [req.params.id], 
             (err, data) => {
-            if (err) throw err
-            else res.status(200).json(data)
+                if(err) {
+                    res.json({
+                        status: res.statusCode,
+                        msg: "An error occurred."
+                    })
+                }else {
+                    res.json(data)
+                }
         })
     }
     async createUser(req, res) {
@@ -107,7 +112,7 @@ class User {
         `
         Update Users
         Set ?
-        Where usersID = ?;
+        Where userID = ?;
         `
         db.query(strQry, [data, req.params.id],
             (err) =>{
@@ -119,7 +124,7 @@ class User {
         const strQry =
         `
         Delete from Users
-        Where usersID = ?;
+        Where userID = ?;
         `
         db.query(strQry, [req.params.id],
             (err) => {
