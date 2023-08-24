@@ -44,21 +44,15 @@ class User {
     }
     fetchUsers(req, res) {
         const strQry = 
-        `Select userID, firstName, lastName, userAge, Gender, userRole, emailAdd, userPass, userProfile,  
+        `Select userID, firstName, lastName, userAge, Gender, userRole, emailAdd, userPass, userProfile  
         From Users;
         `
         db.query(strQry, (err, data) => {
-            if(!err) {
-                res.json({
-                    status: res.statusCode,
-                    data
-                })
-            }else {
-                res.json({
-                    status: res.statusCode,
-                    msg: "An error occurred."
-                })
-            }
+            if(err) throw err 
+            res.json({
+                status: res.statusCode,
+                data
+            })
         })
     }
     fetchUser(req, res) {
