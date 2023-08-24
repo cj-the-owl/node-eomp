@@ -62,7 +62,7 @@ class User {
     fetchUser(req, res) {
         const strQry = 
         `
-        Select usersID, firstName, lastName, userEmail, userPassword, UserImg, userRole
+        Select userID, firstName, lastName, userAge, Gender, userRole, userPass, userProfile,  
         From Users
         Where usersID = ?;
         `
@@ -133,8 +133,7 @@ class Products {
     fetchProducts(req, res) {
         const strQry =
         `
-        SELECT productID, productName, productDescription, 
-        category, productPrice, productImg, quantity
+        SELECT prodID, prodName, quantity, amount, Category, prodUrl
         FROM Products;
         `;
         db.query(strQry, (err, data) => {
@@ -145,8 +144,7 @@ class Products {
     fetchProduct(req, res) {
         const strQry =
         `
-        SELECT productID, productName, productDescription,
-        category, productPrice, productImg, quantity
+        SELECT prodID, prodName, quantity, amount, Category, prodUrl
         FROM Products
         WHERE productID = ?;
         `;
