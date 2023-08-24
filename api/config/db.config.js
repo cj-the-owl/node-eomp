@@ -7,7 +7,8 @@ const connection = createPool({
     user: process.env.dbUser,
     password: process.env.dbPassword,
     port: process.env.dbPort,
-    multipleStatements: true
+    multipleStatements: true,
+    connectionLimit: 30
  })
 
  module.exports = connection

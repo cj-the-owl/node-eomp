@@ -48,15 +48,15 @@ class User {
         From Users;
         `
         db.query(strQry, (err, data) => {
-            if(err) {
+            if(!err) {
                 res.json({
                     status: res.statusCode,
-                    msg: "An error occurred."
+                    data
                 })
             }else {
                 res.json({
                     status: res.statusCode,
-                    data
+                    msg: "An error occurred."
                 })
             }
         })
