@@ -45,7 +45,7 @@ class User {
     fetchUsers(req, res) {
         const strQry = 
         `Select userID, firstName, lastName, userAge, Gender, userRole, emailAdd, userPass, userProfile,  
-        From Users
+        From Users;
         `
         db.query(strQry, (err, data) => {
             if(err) {
@@ -54,7 +54,10 @@ class User {
                     msg: "An error occurred."
                 })
             }else {
-                res.json(data)
+                res.json({
+                    status: res.statusCode,
+                    data
+                })
             }
         })
     }
