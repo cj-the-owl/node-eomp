@@ -24,54 +24,55 @@
         </router-link>
         </div>
     </div>
-    <div v-else>
-        <p>Spinner goes here</p>
+    <div class="text-center" v-else>
+        <spinner-comp/>
     </div>
 </template>
 
 <script>
+import SpinnerComp from '@/components/spinnerComp.vue';
+
     export default {
-        data() {
-            return {
-                search: "",
-                category: "All"
-            }
-        },
-
-        methods: {
-            sortPrice() {
-                this.$store.commit("sortProductsByPrice")
-            }
-        },
-
-        computed: {
-            products() {
-                return this.$store.state.products?.filter((product) => {
-                    let isMatch = true;
-                    if (!product.name.toLowerCase().includes(this.search.toLowerCase())) {
-                        isMatch = false
-                    }
-                    if (this.category !== "All" && this.category !== product.product_category) {
-                        isMatch = false
-                    }
-                    return isMatch
-                })
-            }
-        },
-        props: ["product"],
-        computed: {
-            products() {
-                return this.$store.state.products
-            },
-        },
-        mounted(){
-            this.$store.dispatch("fetchProducts")
-        }, methods: {
-            log( id ){
-                console.log( id )
-            }
+    data() {
+        return {
+            search: "",
+            category: "All"
+        };
+    },
+    methods: {
+        sortPrice() {
+            this.$store.commit("sortProductsByPrice");
         }
-    }
+    },
+    computed: {
+        products() {
+            return this.$store.state.products?.filter((product) => {
+                let isMatch = true;
+                if (!product.name.toLowerCase().includes(this.search.toLowerCase())) {
+                    isMatch = false;
+                }
+                if (this.category !== "All" && this.category !== product.product_category) {
+                    isMatch = false;
+                }
+                return isMatch;
+            });
+        }
+    },
+    props: ["product"],
+    computed: {
+        products() {
+            return this.$store.state.products;
+        },
+    },
+    mounted() {
+        this.$store.dispatch("fetchProducts");
+    }, methods: {
+        log(id) {
+            console.log(id);
+        }
+    },
+    components: { SpinnerComp }
+}
 </script>
 
 <style scoped>

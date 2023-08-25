@@ -6,10 +6,15 @@
             <p>Price: R{{ product[0].product_price }}</p>
         </div>
     </div>
+    <div v-else>
+        <spinner-comp/>
+    </div>
 </template>
 
 <script>
+import spinnerComp from '@/components/spinnerComp.vue';
     export default {
+  components: { spinnerComp },
         props: ["product_id"],
         computed: {
             product() {

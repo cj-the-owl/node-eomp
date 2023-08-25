@@ -33,7 +33,9 @@
                     <button class="btn" @click="deleteProduct(product.prodID)">Delete</button>
                 </td>
             </tr>
-            <tr v-else>Waiting</tr>
+            <div v-else>
+                <spinner-comp/>
+            </div>
         </tbody>
         </table>
 
@@ -70,7 +72,9 @@
                     <button class="btn" @click="deleteUser(user.userID)">Delete</button>
                 </td>
             </tr>
-            <tr v-else>Waiting</tr>
+            <div v-else>
+                <spinner-comp/>
+            </div>
         </tbody>
         </table>
     </div>
@@ -81,12 +85,14 @@ import UpdateProduct from '@/components/updateProduct.vue'
 import addProduct from '@/components/addProduct.vue'
 import UpdateUser from '@/components/updateUser.vue';
 import AddUser from '@/components/addUser.vue';
+import SpinnerComp from '@/components/spinnerComp.vue';
     export default {
         components: {
     addProduct,
     UpdateProduct,
     UpdateUser,
-    AddUser
+    AddUser,
+    SpinnerComp
 },
         computed: {
             products() {
