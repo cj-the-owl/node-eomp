@@ -19,13 +19,13 @@
   <div class="h-100 p-5 m-4 text-dark rounded-3">
     <form action="https://formspree.io/f/xrgwqlqa" method="POST">
   <div class="col-6 fs-5">
-        <input type="text" class="form-input" id="fullName" name="fullName" placeholder="Name & Surname Here" required>
+        <input type="text" class="form-input" id="fullName" name="fullName" placeholder="Name & Surname Here" required oninvalid="this.setCustomValidity('Please insert full name')">
     </div>
     <div class="col-12 fs-5">
-        <input type="text" class="form-input" id="Email" name="Email" placeholder="Email" required>
+        <input type="text" class="form-input" id="Email" name="Email" placeholder="Email" required oninvalid="this.setCustomValidity('Please insert email')">
     </div>
     <div class="col-12 fs-5">
-        <textarea type="text" class="form-input" id="Message" name="Message" placeholder="Your message here..." required></textarea>
+        <textarea type="text" class="form-input" id="Message" name="Message" placeholder="Your message here..." required oninvalid="this.setCustomValidity('Cannot send empty textarea')"></textarea>
     </div>
     <div class="col-12">
         <button type="submit" class="btn" id="submit-btn">Submit!</button>
