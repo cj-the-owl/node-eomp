@@ -39,10 +39,10 @@
     .honeycomb div {
         -webkit-animation: honeycomb 2.1s infinite backwards;
         animation: honeycomb 2.1s infinite backwards;
-        background: #f3f3f3;
+        background: black;
         height: 12px;
         margin-top: 6px;
-        margin-left: 47rem;
+        margin-left: 44rem;
         position: absolute;
         width: 24px;
     }
@@ -58,12 +58,12 @@
 
 .honeycomb div:after {
   top: -6px;
-  border-bottom: 6px solid #f3f3f3;
+  border-bottom: 6px solid black;
 }
 
 .honeycomb div:before {
   bottom: -6px;
-  border-top: 6px solid #f3f3f3;
+  border-top: 6px solid black;
 }
 
 .honeycomb div:nth-child(1) {

@@ -1,12 +1,12 @@
 <template>
     <div v-if="product" class="product-details">
-        <img :src="product[0].image" :alt="product[0].product_name">
+        <img :src="product[0].prodUrl" :alt="product[0].prodName">
         <div>
-            <h2>{{ product[0].product_name }}</h2>
-            <p>Price: R{{ product[0].product_price }}</p>
+            <h2>{{ product[0].prodName }}</h2>
+            <p>Price: R{{ product[0].amount }}</p>
         </div>
     </div>
-    <div v-else>
+    <div class="m-5" v-else>
         <spinner-comp/>
     </div>
 </template>
@@ -15,10 +15,10 @@
 import spinnerComp from '@/components/spinnerComp.vue';
     export default {
   components: { spinnerComp },
-        props: ["product_id"],
+        props: ["prodID"],
         computed: {
             product() {
-                return this.$store.state.product;
+                return this.$store.state.selectedProduct;
             },
         },
         mounted() {

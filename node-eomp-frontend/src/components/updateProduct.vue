@@ -25,6 +25,19 @@
     </div>
 </template>
 
+<style scoped>
+    .btn {
+        background-color: black;
+        color: white;
+        margin-bottom: 5px;
+    }
+
+    .btn:hover {
+        background-color: white;
+        color: black;
+    }
+</style>
+
 <script>
     export default {
         props: ["product"],

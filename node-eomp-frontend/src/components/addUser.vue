@@ -1,6 +1,6 @@
 <template>
     <div>
-        <button type="btn" data-bs--toggle="modal" data-bs-target="#exampleModal">Add</button>
+        <button class="btn" type="btn" data-bs--toggle="modal" data-bs-target="#exampleModal">Add</button>
 
         <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
             <div class="modal-dialog">
@@ -28,6 +28,20 @@
         </div>
     </div>
 </template>
+
+<style scoped>
+.btn {
+        background-color: black;
+        color: white;
+        border-radius:0%;
+        width: 60px;
+    }
+
+    .btn:hover {
+        background-color: white;
+        color: black;
+    }
+</style>
 
 <script>
 

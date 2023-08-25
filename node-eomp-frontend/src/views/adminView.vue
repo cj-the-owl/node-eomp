@@ -2,11 +2,11 @@
     <div class="position-relative overflow-hidden text-center" id="hero">
         <div class="col-md-5 p-lg-5 mx-auto my-5">
             <h1 class="display-3">Admin</h1>
+            <h1 class="text-center text-white">Products</h1>
         </div>
     </div>
 
     <div>
-        <h1 class="text-center text-black">Products</h1>
         <addProduct/>
         <table class="table-responsive-md table table-bordered">
         <thead>
@@ -33,13 +33,18 @@
                     <button class="btn" @click="deleteProduct(product.prodID)">Delete</button>
                 </td>
             </tr>
-            <div v-else>
+            <div class="m-5" v-else>
                 <spinner-comp/>
             </div>
         </tbody>
         </table>
 
-        <h1 class="text-center text-black">Users</h1>
+        <div class="position-relative overflow-hidden text-center" id="hero">
+        <div class="col-md-5 p-lg-5 mx-auto my-5">
+            <h1 class="display-3">Admin</h1>
+            <h1 class="text-center text-white">Users</h1>
+        </div>
+    </div>
         <add-user/>
         <table class="table-responsive-md table table-bordered">
         <thead>
@@ -72,7 +77,7 @@
                     <button class="btn" @click="deleteUser(user.userID)">Delete</button>
                 </td>
             </tr>
-            <div v-else>
+            <div class="m-5" v-else>
                 <spinner-comp/>
             </div>
         </tbody>
@@ -143,4 +148,18 @@ import SpinnerComp from '@/components/spinnerComp.vue';
     width: 100px;
     height: 100px;
   }
+
+  table {
+    border-color: black;
+  }
+
+  .btn {
+    background-color: black;
+    color: white;
+    margin-top: 5px;
+  }
+  .btn:hover {
+        background-color: white;
+        color: black;
+    }
 </style>

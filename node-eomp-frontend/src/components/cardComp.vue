@@ -1,13 +1,31 @@
 <template>
-    <router-link :to="{name: 'product', params: {id: product.product_id}}">
-        <img :src="product.product_image">
-            <h5>{{ product.product_name }}</h5>
-            <p>{{ product.product_price }}</p>
-    </router-link>
+    <div v-if="product">
+        <img :src="product.prodUrl" :alt="product.prodName">
+        <h2>{{product.prodName}}</h2>
+        <p>{{product.amount}}</p>
+    </div>
+    <div v-else>
+        <spinner/>
+    </div>
+        
+
 </template>
 
 <script>
-    export default {
-        props: ["product"]
-    }
+
+import spinner from '@/components/SpinnerComponent.vue'
+
+export default {
+    props: ["product"], 
+
+    components:{
+        spinner
+    },
+
+    computed:{
+        product(){
+            return this.$store.state.selectedProduct; 
+        },
+    },
+}
 </script>

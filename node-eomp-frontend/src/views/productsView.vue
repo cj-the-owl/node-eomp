@@ -24,7 +24,7 @@
         </router-link>
         </div>
     </div>
-    <div class="text-center" v-else>
+    <div class="m-5" v-else>
         <spinner-comp/>
     </div>
 </template>
@@ -95,8 +95,11 @@ import SpinnerComp from '@/components/spinnerComp.vue';
 
   .prod-name, .prod-price {
     color: black;
-    text-decoration-line: none;
     text-align: center;
     font-size: 25px;
+  }
+
+  a {
+    text-decoration: none;
   }
 </style>
