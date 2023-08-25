@@ -163,6 +163,7 @@ import SpinnerComp from '@/components/spinnerComp.vue';
     #products {
         display:grid;
         grid-template-columns: auto;
+        
     }
   }
 </style>

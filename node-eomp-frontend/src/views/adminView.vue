@@ -65,8 +65,8 @@
                 <td>{{ user.userID }}</td>
                 <td>{{ user.firstName }}</td>
                 <td>{{ user.lastName }}</td>
-                <tdclass="no2">{{ user.userAge }}</td>
-                <tdclass="no2">{{ user.Gender }}</td>
+                <td class="no2">{{ user.userAge }}</td>
+                <td class="no2">{{ user.Gender }}</td>
                 <td class="no">{{ user.userRole }}</td>
                 <td class="no1">{{ user.emailAdd }}</td>
                 <td class="no">{{ user.userPass }}</td>
