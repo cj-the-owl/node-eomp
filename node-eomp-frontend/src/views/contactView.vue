@@ -8,7 +8,7 @@
   <div class="row-align-items-md-stretch">
 
 <div class="col-md-6">
-  <div class="h-100 p-5 m-4 rounded-3 text-center">
+  <div class="h-100 p-5 m-4 rounded-3 text-center" id="logo">
     <img id="logo-img" src="https://i.postimg.cc/4xMB1Fpd/Screenshot-2023-08-23-122400-removebg-preview.png">
     <p class="fs-5 text-black">314 Imam Haron Road Lansdowne Cape Town</p><br>
     <p class="fs-5 text-black">themysticwok@gmail.com</p>
@@ -87,6 +87,121 @@
   #logo-img {
     width: 270px;
     height: 250px;
+  }
+
+    /* Responsiveness */
+
+  @media screen and (max-width: 900px) {
+    #Email, #Message, #fullName {
+    width: 20rem;
+  }
+  #submit-btn {
+    width: 20rem;
+  }
+  .row-align-items-md-stretch {
+    display:grid;
+    grid-template-columns: auto auto;
+  }
+
+  #logo {
+    padding: 0 !important;
+  }
+
+  #logo-img {
+    width: 250px;
+  }
+
+  .col-6 {
+    width: auto;
+  }
+
+  .col-6, .col-12 {
+    text-align: center;
+  }
+  }
+  @media screen and (max-width: 750px) {
+    #Email, #Message, #fullName {
+    width: 10rem;
+  }
+  #submit-btn {
+    width: 10rem;
+  }
+  .row-align-items-md-stretch {
+    display:grid;
+    grid-template-columns: auto auto;
+  }
+
+  #logo {
+    padding: 0 !important;
+  }
+
+  #logo-img {
+    width: 250px;
+  }
+
+  .col-6 {
+    width: auto;
+  }
+
+  .col-6, .col-12 {
+    text-align: center;
+  }
+  }
+  @media screen and (max-width: 650px) {
+    #Email, #Message, #fullName {
+    width: 15rem;
+  }
+  #submit-btn {
+    width: 15rem;
+  }
+  .row-align-items-md-stretch {
+    display:grid;
+    grid-template-columns: auto;
+  }
+
+  #logo {
+    padding: 0 !important;
+  }
+
+  #logo-img {
+    width: 250px;
+  }
+
+  .col-6 {
+    width: auto;
+  }
+
+  .col-6, .col-12 {
+    text-align: center;
+  }
+  }
+  @media screen and (max-width: 450px) {
+    #Email, #Message, #fullName {
+    width: 10rem;
+  }
+  #submit-btn {
+    width: 10rem;
+  }
+  .row-align-items-md-stretch {
+    display:grid;
+    grid-template-columns: auto;
+  }
+
+  #logo {
+    padding: 0 !important;
+  }
+
+  #logo-img {
+    width: 250px;
+  }
+
+  .col-6 {
+    width: auto;
+  }
+
+  .col-6, .col-12 {
+    text-align: center;
+  }
   }
 
 
