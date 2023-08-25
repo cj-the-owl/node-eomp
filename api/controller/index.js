@@ -24,7 +24,7 @@ route.get("/users", (req, res) => {
 })
 
 route.post("/register", bodyParser.json(), (req, res) => {
-    user.createUser(req, res)
+    user.register(req, res)
 })
 
 route.put("/user/:id", bodyParser.json(), (req, res) => {

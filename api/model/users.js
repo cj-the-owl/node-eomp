@@ -71,31 +71,38 @@ class User {
                 }
         })
     }
-    async createUser(req, res) {
-        let detail = req.body
-        detail.userPassword = await
-        hash(detail.userPassword, 15)
-        let user = {
-            userEmail: detail.userEmail,
-            userPassword: detail.userPassword
-        }
-        const strQry = 
-        `
-        Insert into Users
-        set ?;
-        `
-        db.query(strQry, [detail], (err) => {
-            if (err) {
-                res.status(401).json({err})
-            } else {
-                const jwToken = createToken(user)
-                res.cookie("LegitUser", jwToken, {
+    async register(req, res) {
+        const data = req.body;
+
+        // encrypt password
+        data.userPass = await hash(data.userPass, 15);
+
+        // payload
+        const user = {
+            emailAdd: data.emailAdd,
+            userPass: data.userPass
+        };
+
+        // query
+        const query = `INSERT INTO Users SET ?;`;
+
+        db.query(query,
+            [data],
+            (err) => {
+                if (err) throw err
+
+                // create token
+                let token = createToken(user)
+                res.cookie("LegitUser", token, {
                     maxAge: 3600000,
                     httpOnly: true
-                })
-                res.status(200).json({msg: "A User record was saved"})
-            }
-        })
+                });
+
+                res.json({
+                    status: res.statusCode,
+                    message: "New user registered!"
+                });
+            });
     }
     update(req, res) {
         let data = req.body
