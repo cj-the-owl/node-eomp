@@ -49,16 +49,13 @@ class User {
         `
         db.query(strQry, (err, data) => {
             if(err) throw err 
-            res.json({
-                status: res.statusCode,
-                data
-            })
+            res.json(data)
         })
     }
     fetchUser(req, res) {
         const strQry = 
         `
-        Select userID, firstName, lastName, userAge, Gender, userRole, emailAdd, userPass, userProfile,  
+        Select userID, firstName, lastName, userAge, Gender, userRole, emailAdd, userPass, userProfile  
         From Users
         Where userID = ?;
         `
@@ -172,27 +169,22 @@ class Products {
         );
     }
     updateProduct(req, res) {
-        const strQry =
-        `
-        UPDATE Products
-        SET ?
-        WHERE productID = ?
-        `;
-        db.query(strQry, [req.body, req.params.id],
-            (err) => {
-                if (err) {
-                    res.status(400).json({err: "UNABLE TO UPDATE A RECORD."});
-                } else {
-                    res.status(200).json({msg: "PRODUCTS UPDATED"});
-                }
-            }
-        );
-    }
+        const query = `UPDATE Products SET ? WHERE prodID = ?;`;
+    
+        db.query(query, [req.body, req.params.id], (err) => {
+          if (err) throw err;
+    
+          res.json({
+            status: res.statusCode,
+            message: "Product updated!",
+          });
+        });
+      }
     deleteProduct(req, res) {
         const strQry =
         `
         DELETE FROM Products
-        WHERE productID = ?;
+        WHERE prodID = ?;
         `;
         db.query(strQry, [req.params.id], (err) => {
             if (err) res.status(400).json({err: "THE RECORD WAS NOT FOUND."});
