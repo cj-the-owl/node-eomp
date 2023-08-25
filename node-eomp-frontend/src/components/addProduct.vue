@@ -10,11 +10,11 @@
                         <button class="btn-close" type="button" aria-label="close"></button>
                     </div>
                     <div class="modal-body">
-                        <input class="input" type="text" placeholder="Product Name" v-model="model.product.prodName">
-                        <input class="input" type="text" placeholder="Quantity" v-model="model.product.quantity">
-                        <input class="input" type="text" placeholder="Price" v-model="model.product.amount">
-                        <input class="input" type="text" placeholder="Category" v-model="model.product.category">
-                        <input class="input" type="text" placeholder="Url" v-model="model.product.prodUrl">
+                        <input class="input m-2" type="text" placeholder="Product Name" v-model="model.product.prodName">
+                        <input class="input m-2" type="text" placeholder="Quantity" v-model="model.product.quantity">
+                        <input class="input m-2" type="text" placeholder="Price" v-model="model.product.amount">
+                        <input class="input m-2" type="text" placeholder="Category" v-model="model.product.category">
+                        <input class="input m-2" type="text" placeholder="Url" v-model="model.product.prodUrl">
                     </div>
                     <div class="modal-footer">
                         <button class="btn" type="button" data-bs-dismiss="modal">Close</button>
@@ -67,3 +67,14 @@
         },
     };
 </script>
+
+<style scoped>
+    .modal-content {
+        background-color: black;
+        color: white;
+    }
+
+    .modal-body {
+        background-color: pink;
+    }
+</style>

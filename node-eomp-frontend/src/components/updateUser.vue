@@ -38,6 +38,15 @@
         background-color: white;
         color: black;
     }
+
+    .modal-content {
+        background-color: black;
+        color: white;
+    }
+
+    .modal-body {
+        background-color: pink;
+    }
 </style>
 
 <script>

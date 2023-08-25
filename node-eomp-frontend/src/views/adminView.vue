@@ -43,7 +43,7 @@
             <h1 class="display-5">Users</h1>
         </div>
     </div>
-        <add-user/>
+        <AddUser/>
         <table class="table-responsive-md table table-bordered">
         <thead>
             <tr>
