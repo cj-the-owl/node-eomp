@@ -21,7 +21,7 @@
                     </div>
                     <div class="modal-footer">
                         <button class="btn" type="button" data-bs-dismiss="modal">Close</button>
-                        <button class="btn" type="button" @click="saveProduct">SAVE</button>
+                        <button class="btn" type="button" @click="saveUser">SAVE</button>
                     </div>
                 </div>
             </div>
@@ -35,12 +35,10 @@
         data() {
             return {
                 model: {
-                    product: {
+                    user: {
                         firstNmae: "",
                         lastName: "",
                         userAge: "",
-                        Gender: "",
-                        userRole: "",
                         Gender: "",
                         userRole: "",
                         emailAdd: "",
@@ -51,8 +49,8 @@
             };
         },
         methods: {
-            saveProduct() {
-                this.$store.dispatch("saveProduct", this.model.product);
+            saveUser() {
+                this.$store.dispatch("saveUser", this.model.user);
                 setTimeout(() => {
                     console.log("Loading...");
                     location.reload();

@@ -67,15 +67,26 @@
       
       <div class="col-md-6">
         <div class="h-100 p-5 m-4 text-dark rounded-3">
-          <h3>A Paragraph</h3>
-          <p>Details of some kind</p>
+          <p class="text-black">The Mystic Wok, a captivating Asian cuisine restaurant, bears the creative marksmanship of its founders, Timothy Barry and Caryn Lodewyk. With a shared ardor for the culinary arts and a profound admiration for the diverse tastes of Asia, Timothy and Caryn embarked on a flavorful journey to bring their vision to life. Drawing inspiration from their individual backgrounds, Timothy's culinary prowess and Caryn's background in hospitality management merged seamlessly, resulting in a dining experience that's a harmonious symphony of flavors and ambiance.</p>
         </div>
       </div>
 
       <div class="col-md-6">
         <div class="h-100 p-5 m-4 rounded-3">
-          <img src="#">
-          <p>this will be for an image</p>
+          <img class="img-4" src="https://i.postimg.cc/zGQ2NJRC/C12-C1-Caryn-Lodewyk-1.jpg">
+        </div>
+      </div>
+    </div>
+  <div class="row-align-items-md-stretch">
+      <div class="col-md-6">
+        <div class="h-100 p-5 m-4 rounded-3">
+          <img class="img-5" src="https://i.postimg.cc/8z64GRXv/C12_Timothy_Barry_(1).jpg">
+        </div>
+      </div>
+
+      <div class="col-md-6">
+        <div class="h-100 p-5 m-4 text-dark rounded-3">
+          <p class="text-black">Timothy Barry, a seasoned chef with a background rooted in the intricacies of Asian cooking techniques, lends his expertise to craft dishes that reflect his reverence for tradition while also incorporating innovative twists. On the other hand, Caryn Lodewyk, armed with a wealth of experience in creating memorable guest experiences, ensures that The Mystic Wok is not just a restaurant, but a welcoming haven where patrons can immerse themselves in the rich culinary heritage of Asia. Together, their shared passion and dedication have birthed a culinary gem where artistry, taste, and culture converge, inviting guests to savor every bite while embracing the mystique of Asian gastronomy.</p>
         </div>
       </div>
     </div>
@@ -95,6 +106,11 @@
 
   #img-1, #img-2, #img-3 {
     height: 320px;
+    width: 350px;
+  }
+
+  .img-4, .img-5 {
+    height: 350px;
     width: 350px;
   }
 </style>

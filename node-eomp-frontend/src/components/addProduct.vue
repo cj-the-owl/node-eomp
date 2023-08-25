@@ -1,6 +1,6 @@
 <template>
     <div>
-        <button type="btn" data-bs--toggle="modal" data-bs-target="#exampleModal">Add</button>
+        <button type="btn" data-bs-toggle="modal" data-bs-target="#exampleModal">Add</button>
 
         <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
             <div class="modal-dialog">
@@ -11,14 +11,14 @@
                     </div>
                     <div class="modal-body">
                         <input class="input" type="text" placeholder="Product Name" v-model="model.product.prodName">
-                        <input class="input" type="text" placeholder="Price" v-model="model.product.quantity">
+                        <input class="input" type="text" placeholder="Quantity" v-model="model.product.quantity">
                         <input class="input" type="text" placeholder="Price" v-model="model.product.amount">
-                        <input class="input" type="text" placeholder="Price" v-model="model.product.category">
-                        <input class="input" type="text" placeholder="Price" v-model="model.product.prodUrl">
+                        <input class="input" type="text" placeholder="Category" v-model="model.product.category">
+                        <input class="input" type="text" placeholder="Url" v-model="model.product.prodUrl">
                     </div>
                     <div class="modal-footer">
                         <button class="btn" type="button" data-bs-dismiss="modal">Close</button>
-                        <button class="btn" type="button" @click="saveProduct">SAVE</button>
+                        <button class="btn" type="button" data-bs-dismiss="modal" @click="saveProduct">Save</button>
                     </div>
                 </div>
             </div>

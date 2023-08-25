@@ -9,15 +9,15 @@
                         <button class="btn-close" type="button" data-bs-dismiss="modal" aria-label="close"></button>
                     </div>
                     <div class="modal-body">
-                        <input class="input" type="text" placeholder="Product Name" v-model="editProduct.prodName">
-                        <input class="input" type="text" placeholder="Product Name" v-model="editProduct.quantity">
-                        <input class="input" type="text" placeholder="Product Name" v-model="editProduct.amount">
-                        <input class="input" type="text" placeholder="Product Name" v-model="editProduct.category">
-                        <input class="input" type="text" placeholder="Product Name" v-model="editProduct.prodUrl">
+                        <input class="input" type="text" name="name" placeholder="Product Name" v-model="editProduct.prodName">
+                        <input class="input" type="text" name="name" placeholder="Quantity" v-model="editProduct.quantity">
+                        <input class="input" type="text" name="name" placeholder="Price" v-model="editProduct.amount">
+                        <input class="input" type="text" name="name" placeholder="Category" v-model="editProduct.category">
+                        <input class="input" type="text" name="name" placeholder="Url" v-model="editProduct.prodUrl">
                     </div>
                     <div class="modal-footer">
                         <button class="btn" type="button" data-bs-dismiss="modal">Close</button>
-                        <button class="btn" type="button" @click="updateProduct(product.prodID)">SAVE</button>
+                        <button class="btn" type="button" data-bs-dismiss="modal" @click="updateProduct(product.prodID)">SAVE</button>
                     </div>
                 </div>
             </div>
