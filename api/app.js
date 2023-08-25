@@ -25,12 +25,6 @@ app.use(
 app.use(route)
 app.use(errorHandling)
 
-// route.get('/',
-// (req, res) => {
-//     res.sendFile(path.resolve(__dirname, './static/html/index.html'));
-// });
-
-
 app.listen(port, () => {
     console.log(`Server is running on PORT: ${port}`)
 })
