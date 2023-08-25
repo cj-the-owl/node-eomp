@@ -10,8 +10,8 @@
 <div class="col-md-6">
   <div class="h-100 p-5 m-4 rounded-3 text-center">
     <img id="logo-img" src="https://i.postimg.cc/4xMB1Fpd/Screenshot-2023-08-23-122400-removebg-preview.png">
-    <p class="fs-5">314 Imam Haron Road Lansdowne Cape Town</p><br>
-    <!-- <p class="fs-5">021 705 4269</p> -->
+    <p class="fs-5 text-black">314 Imam Haron Road Lansdowne Cape Town</p><br>
+    <p class="fs-5 text-black">themysticwok@gmail.com</p>
   </div>
 </div>
 
