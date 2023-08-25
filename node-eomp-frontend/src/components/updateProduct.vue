@@ -1,7 +1,7 @@
 <template>
     <div>
-        <button class="btn" type="button" @click="editModal(productName.prodID)" data-bs-toggle="modal" :data-bs-target="'#exampleModal' + productName.prodID">Edit</button>
-        <div class="modal fade" :id="'exampleModal' + productName.prodID" tabindex="-1" :aria-labelledBy="'exampleModalLabel' + productName.prodID" aria-hidden="true">
+        <button class="btn" type="button" @click="editModal(product.prodID)" data-bs-toggle="modal" :data-bs-target="'#exampleModal' + product.prodID">Edit</button>
+        <div class="modal fade" :id="'exampleModal' + product.prodID" tabindex="-1" :aria-labelledBy="'exampleModalLabel' + product.prodID" aria-hidden="true">
             <div class="modal-dialog">
                 <div class="modal-content">
                     <div class="modal-header">
@@ -17,7 +17,7 @@
                     </div>
                     <div class="modal-footer">
                         <button class="btn" type="button" data-bs-dismiss="modal">Close</button>
-                        <button class="btn" type="button" @click="updateProduct(productName.prodID)">SAVE</button>
+                        <button class="btn" type="button" @click="updateProduct(product.prodID)">SAVE</button>
                     </div>
                 </div>
             </div>

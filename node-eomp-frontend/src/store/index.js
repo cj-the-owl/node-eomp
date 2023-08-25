@@ -1,5 +1,6 @@
 import { createStore } from 'vuex'
-const baseUrl = "node-eomp-vbin.onrender.com";
+import axios from 'axios';
+const baseUrl = "https://node-eomp-vbin.onrender.com/";
 export default createStore({
   state: {
     products: null,
@@ -11,8 +12,8 @@ export default createStore({
   getters: {
   },
   mutations: {
-    setProducts: (state, value) => {
-      state.products = value
+    setProducts: (state, values) => {
+      state.products = values
     },
     ssetProduct: (state, value) => {
       state.product = value;
@@ -42,12 +43,12 @@ export default createStore({
         }
       }
       catch(e) {
-        console.error(error)
+        console.error(e)
       }
     },
     async fetchProduct(context, id) {
       try{
-        let product = await (await fetch(baseUrl+"/products/id")).json()
+        let product = await (await fetch(baseUrl+"products/:id")).json()
         if (product) {
           context.commit ("setProduct", product)
         } else {
@@ -56,6 +57,47 @@ export default createStore({
       }
       catch(e) {
         console.error(e)
+      }
+    },
+    async saveProduct(context, payload) {
+      console.log("Done");
+      try {
+        const { res } = await axios.post(`${baseUrl}product`, payload);
+        console.log('response:', res);
+        alert ('Product was created')
+        let {result,msg, err} = await res.data;
+        if (result) {
+          context.commit("setProduct", result);
+        } else {
+          context.commit("setResponse", msg);
+        }
+      } catch (e) {
+        console.error(e)
+      }
+    },
+    async updateProduct(context, payload) {
+      try {
+        const res = await axios.put(`${baseUrl}product/${payload.prodID}`, payload)
+        console.log('Response:', res);
+        alert ('Product was edited')
+        let { results, err} = await res.data;
+        if (results) {
+          context.commit('setProduct', results[0])
+        } else {
+          context.commit('setResponse', err)
+        }
+      } catch(e) {
+        console.error(e);
+      }
+    },
+    async deleteProduct({ commit, dispatch }, id) {
+      try {
+        await axios.delete(`${baseUrl}product/${id}`);
+        commit('setResponse', 'Product was deleted');
+        alert ('Product was deleted')
+        dispatch('fetchProducts');
+      } catch (e) {
+        commit('setResponse', 'Product did not delete');
       }
     },
     async fetchUsers(context) {
@@ -68,7 +110,7 @@ export default createStore({
         }
       }
       catch(e) {
-        console.error(error)
+        console.error(e)
       }
     }
   },

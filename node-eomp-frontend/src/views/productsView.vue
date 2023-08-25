@@ -18,9 +18,9 @@
         <div v-if="products" class="flex-container" id="products">
         <div class="prod-dis" v-for="product of products" :key="product.prodID" :product="product">
         <router-link :to="{name: 'product', params:{id: product.prodID}}">
-            <img :src="product.prodUrl">
-            <h5>{{ product.prodName }}</h5>
-            <p>R {{ product.amount }}</p>
+            <img class="prod-img" :src="product.prodUrl">
+            <h5 class="prod-name">{{ product.prodName }}</h5>
+            <p class="prod-price">R {{ product.amount }}</p>
         </router-link>
         </div>
     </div>
@@ -78,5 +78,24 @@
     #hero {
         background-color: black;
     color: white;
+  }
+  #products {
+    display: grid;
+    grid-template-columns: auto auto auto;
+    justify-content: center;
+    align-items: center;
+    gap: 15rem;
+  }
+  .prod-img {
+    width: 300px;
+    height: 300px;
+    border-radius: 10px;
+  }
+
+  .prod-name, .prod-price {
+    color: black;
+    text-decoration-line: none;
+    text-align: center;
+    font-size: 25px;
   }
 </style>

@@ -6,20 +6,34 @@
     </div>
   </div>
 
-  <div class="p-2 m-2">
-    <h3 class="text-center display-4" id="feat-prod-head">Some of of our products!</h3>
+
+    <div class="p-2 m-2">
+    <h3 class="text-center display-4" id="feat-prod-head">Home of the best asian-style cuisine!</h3>
     <div id="feat-prod">
       <div class="prod">
         <img class="p-2" id="prod-img" src="https://i.postimg.cc/ZKP0TNZ0/7-RECETAS-PARA-CENAS-LIGERAS-BARATAS-Y-F-CILES-DE-PREPARAR-EN-UN-MOMENTO.jpg">
-        <router-link to="/products"><button class="btn">View More</button></router-link>
       </div>
       <div class="prod">
         <img class="p-2" id="prod-img" src="https://i.postimg.cc/5tDf591Z/How-To-Make-Onigiri-4-Easy-Recipes-Pickled-Plum.jpg">
-        <router-link to="/products"><button class="btn">View More</button></router-link>
       </div>
       <div class="prod">
         <img class="p-2" id="prod-img" src="https://i.postimg.cc/tT7VJ4kw/download-2.jpg">
+      </div>
+
+      <div class="prod">
+        <h2 class="display-4 text-black">About Us</h2><br>
+        <p>Learn about the journey of the Mystic Wok and how it came to be</p>
+        <router-link to="/about"><button class="btn">View More</button></router-link>
+      </div>
+      <div class="prod">
+        <h2 class="display-4 text-black">Our Menu</h2><br>
+        <p>View our menu filled with a variety of asian-style dishes at affordable prices</p>
         <router-link to="/products"><button class="btn">View More</button></router-link>
+      </div>
+      <div class="prod">
+        <h2 class="display-4 text-black">Contact Us</h2><br>
+        <p>We are always looking for feedback from our customers to improve! Be a part of that and send us a message</p>
+        <router-link to="/contact"><button class="btn">View More</button></router-link>
       </div>
     </div>
   </div>
@@ -53,9 +67,14 @@
     display: grid;
     grid-template-columns: auto auto auto;
     justify-content: center;
-    gap: 30px;
+    align-items: center;
+    gap: 50px;
+    
   }
 
+  .prod {
+    text-align: center;
+  }
   .btn {
     background-color: black;
     color: white

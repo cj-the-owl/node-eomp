@@ -28,7 +28,7 @@
                 <td>{{ product.quantity }}</td>
                 <td>{{ product.amount }}</td>
                 <td>{{ product.category }}</td>
-                <td><img :src=product.prodUrl></td>
+                <td><img class="admin-img" :src=product.prodUrl></td>
                 <td><updateProduct :product="product"/>
                     <button class="btn" @click="deleteProduct(product.prodID)">Delete</button>
                 </td>
@@ -57,6 +57,16 @@ import addProduct from '@/components/addProduct.vue'
         },
         mounted() {
             this.$store.dispatch("fetchProducts")
+        },
+        methods: {
+            deleteProduct(prodID) {
+                if (confirm("You sure?")) {
+                    this.$store.dispatch("deleteProduct", prodID);
+                    setTimeout(() => {
+                        location.reload();
+                    }, 500);
+                }
+            },
         }
     }
 </script>
@@ -65,5 +75,10 @@ import addProduct from '@/components/addProduct.vue'
     #hero {
     background-color: black;
     color: white;
+  }
+
+  .admin-img {
+    width: 100px;
+    height: 100px;
   }
 </style>
