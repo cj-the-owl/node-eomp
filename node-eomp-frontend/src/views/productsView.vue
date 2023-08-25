@@ -5,7 +5,7 @@
         </div>
     </div>
 
-    <button class="btn" @click="sortPrice">Sort by Price</button>
+    <button class="btn" @click="sortName">Sort by Name</button>
 
     <input type="text" class="search-input" v-model="search" placeholder="Search...">
 
@@ -16,11 +16,13 @@
         <option class="opt" value="Starters">Starters</option>
     </select>
         <div v-if="products" class="flex-container" id="products">
-        <div class="prod-dis" v-for="product of products" :key="product.prodID" :product="product">
+        <div class="prod-dis" v-for="product in products" :key="product.prodID" :product="product">
         <router-link :to="{name: 'product', params:{id: product.prodID}}">
             <img class="prod-img" :src="product.prodUrl">
             <h5 class="prod-name">{{ product.prodName }}</h5>
             <p class="prod-price">R {{ product.amount }}</p>
+            <button class="btn" type="button">View</button>
+
         </router-link>
         </div>
     </div>
@@ -40,18 +42,18 @@ import SpinnerComp from '@/components/spinnerComp.vue';
         };
     },
     methods: {
-        sortPrice() {
-            this.$store.commit("sortProductsByPrice");
+        sortName() {
+            this.$store.commit("sortByName");
         }
     },
     computed: {
         products() {
             return this.$store.state.products?.filter((product) => {
                 let isMatch = true;
-                if (!product.name.toLowerCase().includes(this.search.toLowerCase())) {
+                if (!product.prodName.toLowerCase().includes(this.search.toLowerCase())) {
                     isMatch = false;
                 }
-                if (this.category !== "All" && this.category !== product.product_category) {
+                if (this.Category !== "All" && this.Category !== product.Category) {
                     isMatch = false;
                 }
                 return isMatch;
@@ -101,5 +103,17 @@ import SpinnerComp from '@/components/spinnerComp.vue';
 
   a {
     text-decoration: none;
+  }
+
+  .btn {
+    background-color: black;
+    color: white;
+    text-align: center;
+  }
+
+  .btn:hover {
+    background-color: white;
+    color: black;
+    transition: ease-out 0.3s;
   }
 </style>

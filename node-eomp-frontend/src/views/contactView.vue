@@ -67,6 +67,13 @@
     width: 25rem;;
     background-color: black;
     color: white;
+    font-size: 25px;
+  }
+
+  #submit-btn:hover {
+    background-color: white;
+    color: black;
+    transition: ease-out 0.3s;
   }
 
   .col-12 {

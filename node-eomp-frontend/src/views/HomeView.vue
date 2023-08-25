@@ -77,7 +77,13 @@
   }
   .btn {
     background-color: black;
-    color: white
+    color: white;
+  }
+
+  .btn:hover {
+    background-color: white;
+    color: black;
+    transition: ease-out 0.3s;
   }
 
   #feat-prod-head {
@@ -87,6 +93,31 @@
   /* responsiveness */
 
   @media screen and (max-width: 1000px) {
+    #feat-prod {
+      display: grid;
+      grid-template-columns: auto auto auto;
+    }
 
+    #prod-img {
+      height: 200px;
+      width: 200px;
+    }
+  }
+  @media screen and (max-width: 800px) {
+    #feat-prod {
+      display: grid;
+      grid-template-columns: auto;
+      gap: 30px;
+    }
+    #prod-img {
+      height: 300px;
+      width: 300px;
+    }
+  }
+  @media screen and (max-width: 600px) {
+    #feat-prod {
+      display: grid;
+      grid-template-columns: auto;
+    }
   }
 </style>

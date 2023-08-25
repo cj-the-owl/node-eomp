@@ -23,10 +23,16 @@ export default createStore({
     setSelectedProduct:(state, product) => {
       state.selectedProduct = product
     },
-    sortProductsByPrice: (state) => {
+    sortByName: (state) => {
       state.products.sort((a, b) => {
-        return a.price - b.price
-      });
+        if (a.prodName < b.prodName) {
+          return -1;
+        }
+        if (a.prodName > b.prodName) {
+          return 1;
+        }
+        return 0;
+      })
       if (!state.asc) {
         state.products.reverse();
       }

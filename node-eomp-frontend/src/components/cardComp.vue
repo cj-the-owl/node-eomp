@@ -2,6 +2,7 @@
     <div v-if="product">
         <img :src="product.prodUrl" :alt="product.prodName">
         <h2>{{product.prodName}}</h2>
+        <h3>{{product.Category}}</h3>
         <p>{{product.amount}}</p>
     </div>
     <div v-else>

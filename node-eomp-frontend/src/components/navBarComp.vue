@@ -11,7 +11,7 @@
           <router-link class="nav-link" to="/about">About</router-link>
         </li>
         <li class="nav-item">
-          <router-link class="nav-link" to="/products">Products/Menu</router-link>
+          <router-link class="nav-link" to="/products">Menu</router-link>
         </li>
         <li class="nav-item">
           <router-link class="nav-link" to="/contact">Contact</router-link>
@@ -41,6 +41,13 @@
     .nav-link {
         color: black !important;
         font-size: 25px;
+        border-radius: 5px;
+    }
+
+    .nav-link:hover {
+      background-color: black;
+      color: white !important;
+      transition: ease-out 0.3s;
     }
 
     /* .navbar-nav {

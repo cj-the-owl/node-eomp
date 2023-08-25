@@ -113,4 +113,63 @@
     height: 350px;
     width: 350px;
   }
+
+  /* Responsiveness */
+
+  @media screen and (max-width: 900px) {
+    .row-align-items-md-stretch {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  #img-1, #img-2, #img-3 {
+    height: 320px;
+    width: 350px;
+  }
+
+  .img-4, .img-5 {
+    height: 250px;
+    width: 250px;
+  }
+
+  }
+  @media screen and (max-width: 800px) {
+    .row-align-items-md-stretch {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+
+  #img-1, #img-2, #img-3 {
+    height: 270px;
+    width: 300px;
+  }
+
+  .img-4, .img-5 {
+    height: 200px;
+    width: 200px;
+  }
+
+  }
+  @media screen and (max-width: 400px) {
+    .row-align-items-md-stretch {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+
+  #img-1, #img-2, #img-3 {
+    height: 120px;
+    width: 150px;
+  }
+
+  .img-4, .img-5 {
+    height: 150px;
+    width: 150px;
+  }
+
+  }
 </style>
