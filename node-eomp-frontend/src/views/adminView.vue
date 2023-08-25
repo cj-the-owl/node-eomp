@@ -12,10 +12,10 @@
             <tr>
                 <th scope="col">Product Id</th>
                 <th scope="col">Product Name</th>
-                <th scope="col">Quantity</th>
-                <th scope="col">Price</th>
-                <th scope="col">Category</th>
-                <th scope="col">ProductUrl</th>
+                <th class="no2" scope="col">Quantity</th>
+                <th class="no1" scope="col">Price</th>
+                <th class="no1" scope="col">Category</th>
+                <th class="no" scope="col">ProductUrl</th>
                 <th scope="col">Edit/Delete Product</th>
             </tr>
         </thead>
@@ -24,10 +24,10 @@
             <tr v-if="products">
                 <td>{{ product.prodID }}</td>
                 <td>{{ product.prodName }}</td>
-                <td>{{ product.quantity }}</td>
-                <td>{{ product.amount }}</td>
-                <td>{{ product.Category }}</td>
-                <td><img class="admin-img" :src=product.prodUrl></td>
+                <td class="no2">{{ product.quantity }}</td>
+                <td class="no1">{{ product.amount }}</td>
+                <td class="no1">{{ product.Category }}</td>
+                <td class="no"><img class="admin-img" :src=product.prodUrl></td>
                 <td><updateProduct :product="product"/>
                     <button class="btn" @click="deleteProduct(product.prodID)">Delete</button>
                 </td>
@@ -50,12 +50,12 @@
                 <th scope="col">User Id</th>
                 <th scope="col">Firstname</th>
                 <th scope="col">Lastname</th>
-                <th scope="col">Age</th>
-                <th scope="col">Gender</th>
-                <th scope="col">User Role</th>
-                <th scope="col">Email Address</th>
-                <th scope="col">Password</th>
-                <th scope="col">User Profile</th>
+                <th class="no2" scope="col">Age</th>
+                <th class="no2" scope="col">Gender</th>
+                <th class="no" scope="col">User Role</th>
+                <th class="no1" scope="col">Email Address</th>
+                <th class="no" scope="col">Password</th>
+                <th class="no" scope="col">User Profile</th>
                 <th scope="col">Edit/Delete Product</th>
             </tr>
         </thead>
@@ -65,12 +65,12 @@
                 <td>{{ user.userID }}</td>
                 <td>{{ user.firstName }}</td>
                 <td>{{ user.lastName }}</td>
-                <td>{{ user.userAge }}</td>
-                <td>{{ user.Gender }}</td>
-                <td>{{ user.userRole }}</td>
-                <td>{{ user.emailAdd }}</td>
-                <td>{{ user.userPass }}</td>
-                <td><img class="admin-img" :src=user.userProfile></td>
+                <tdclass="no2">{{ user.userAge }}</td>
+                <tdclass="no2">{{ user.Gender }}</td>
+                <td class="no">{{ user.userRole }}</td>
+                <td class="no1">{{ user.emailAdd }}</td>
+                <td class="no">{{ user.userPass }}</td>
+                <td class="no"><img class="admin-img" :src=user.userProfile></td>
                 <td><UpdateUser :user="user"/>
                     <button class="btn" @click="deleteUser(user.userID)">Delete</button>
                 </td>
@@ -160,5 +160,21 @@ import SpinnerComp from '@/components/spinnerComp.vue';
   .btn:hover {
         background-color: white;
         color: black;
+    }
+
+     @media screen and (max-width: 1000px) {
+        .no {
+            display:none;
+        }
+    }
+    @media screen and (max-width: 800px) {
+        .no {
+            display:none;
+        }
+    }
+    @media screen and (max-width: 500px) {
+        .no, .no1, .no2 {
+            display:none;
+        }
     }
 </style>
