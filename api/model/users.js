@@ -104,22 +104,24 @@ class User {
                 });
             });
     }
-    update(req, res) {
-        let data = req.body
-        if(data.userPassword !== null ||
-            data.userPassword !== undefined)
-            data.userPassword = hashSync(data.userPassword, 15)
-        const strQry = 
-        `
-        Update Users
-        Set ?
-        Where userID = ?;
-        `
-        db.query(strQry, [data, req.params.id],
-            (err) =>{
+    updateUser(req, res) {
+        const query = `UPDATE Users SET ? WHERE userID = ?`
+
+        const data = req.body;
+
+        // encrypt password
+        data.userPass = hashSync(data.userPass, 15);
+
+        db.query(query,
+            [data, req.params.id],
+            (err) => {
                 if (err) throw err
-                res.status(200).json({msg: "A row affected"})
-            })
+
+                res.json({
+                    status: res.statusCode,
+                    message: "User details updated!"
+                });
+            });
     }
     deleteUser(req, res) {
         const strQry =
@@ -152,7 +154,7 @@ class Products {
         `
         SELECT prodID, prodName, quantity, amount, Category, prodUrl
         FROM Products
-        WHERE productID = ?;
+        WHERE prodID = ?;
         `;
         db.query(strQry, [req.params.id], (err, data) => {
             if(err) throw err;
