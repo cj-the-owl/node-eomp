@@ -1,8 +1,7 @@
 <template>
-    <div class="position-relative overflow-hidden text-center" id="hero">
+    <div class="overflow-hidden text-center" id="hero">
         <div class="col-md-5 p-lg-5 mx-auto my-5">
-            <h1 class="display-3">Admin</h1>
-            <h1 class="text-center text-white">Products</h1>
+            <h1 class="display-5">Products</h1>
         </div>
     </div>
 
@@ -39,10 +38,9 @@
         </tbody>
         </table>
 
-        <div class="position-relative overflow-hidden text-center" id="hero">
+        <div class="overflow-hidden text-center" id="hero">
         <div class="col-md-5 p-lg-5 mx-auto my-5">
-            <h1 class="display-3">Admin</h1>
-            <h1 class="text-center text-white">Users</h1>
+            <h1 class="display-5">Users</h1>
         </div>
     </div>
         <add-user/>
@@ -142,6 +140,7 @@ import SpinnerComp from '@/components/spinnerComp.vue';
     #hero {
     background-color: black;
     color: white;
+    height: 10rem;
   }
 
   .admin-img {
