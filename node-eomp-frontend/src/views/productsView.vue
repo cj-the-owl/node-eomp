@@ -116,4 +116,53 @@ import SpinnerComp from '@/components/spinnerComp.vue';
     color: black;
     transition: ease-out 0.3s;
   }
+  @media screen and (max-width: 1300px) {
+    #products {
+        gap: 5rem;
+    }
+    .prod-img {
+    width: 200px;
+    height: 200px;
+    }
+  }
+  @media screen and (max-width: 900px) {
+    #products {
+        display:grid;
+        grid-template-columns: auto auto;
+    }
+    .prod-img {
+    width: 200px;
+    height: 200px;
+    }
+  }
+  @media screen and (max-width: 700px) {
+    #products {
+        display:grid;
+        grid-template-columns: auto auto;
+        justify-content: center;
+        align-items: center;
+        gap: 10px;
+    }
+    .prod-img {
+    width: 200px;
+    height: 200px;
+    margin-left: 25px;
+  }
+  .btn {
+    margin-left: 25px;;
+  }
+}
+  @media screen and (max-width: 500px) {
+    #products {
+        display:grid;
+        grid-template-columns: auto;
+    }
+  }
+
+  @media screen and (max-width: 300px) {
+    #products {
+        display:grid;
+        grid-template-columns: auto;
+    }
+  }
 </style>
